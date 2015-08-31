@@ -1,0 +1,7 @@
+.gitignore
+*.txt
+*.csv
+*.htm
+*.html
+*.js
+*~
