@@ -1,6 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
 '''
-x-rate
+x-rates
 '''
 
 __author__ = 'Libao Jin'
@@ -100,6 +100,7 @@ def make_date_range(s_date, e_date):
 
 def get_xrates():
 	'visit x-rates site and grab the exchange rate'
+	except_time = 0
 	url = 'http://www.x-rates.com/table/'
 	values = {'from': 'CNY', 'amount':'1'}
 	user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0'
@@ -107,9 +108,19 @@ def get_xrates():
 	data = urllib.parse.urlencode(values)
 	data = data.encode('utf-8') # data should be bytes
 	req = urllib.request.Request(url, data, headers)
-	with urllib.request.urlopen(req) as response:
-		the_page = response.read().decode('utf-8')
-		return the_page
+	try:
+		with urllib.request.urlopen(req) as response:
+			the_page = response.read().decode('utf-8')
+			return the_page
+	except urllib.error.URLError:
+		except_time += 1
+		if except_time < 2:
+			print('Error! Try again.')
+			the_page = get_xrates()
+			return the_page
+		else:
+			print('Error! Pass.')
+			return None
 
 def get_xrates_by_date(search_date):
 	'visit x-rates site and grab the exchange rate'
@@ -130,18 +141,18 @@ def get_xrates_by_date(search_date):
 			print('Error! Pass {}.'.format(search_date))
 			return None
 
-def get_xrates_by_date2(search_date):
-	'visit x-rates site and grab the exchange rate'
-	url = 'http://www.x-rates.com/historical/'
-	values = {'date': search_date, 'amount': '1','from': 'CNY'}
-	user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0'
-	headers = { 'User-Agent' : user_agent}
-	data = urllib.parse.urlencode(values)
-	data = data.encode("utf-8") # data should be bytes
-	req = urllib.request.Request(url, data, headers)
-	with urllib.request.urlopen(req) as response:
-		the_page = response.read().decode('utf-8')
-		return the_page
+#def get_xrates_by_date2(search_date):
+	#'visit x-rates site and grab the exchange rate'
+	#url = 'http://www.x-rates.com/historical/'
+	#values = {'date': search_date, 'amount': '1','from': 'CNY'}
+	#user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0'
+	#headers = { 'User-Agent' : user_agent}
+	#data = urllib.parse.urlencode(values)
+	#data = data.encode("utf-8") # data should be bytes
+	#req = urllib.request.Request(url, data, headers)
+	#with urllib.request.urlopen(req) as response:
+		#the_page = response.read().decode('utf-8')
+		#return the_page
 
 
 def save_page(local_file, the_page):
@@ -229,7 +240,7 @@ def do_task(current_time, folder):
 	#save_page(local_file, the_page)
 	parse_data(the_page, current_time, folder)
 
-def do_task_by_date(s_date = (2005, 2, 4), e_date = (2015, 8, 30)):
+def do_task_by_date(s_date = (2005, 1, 1), e_date = (2015, 8, 30)):
 
 	folder = 'daily'
 	dates = make_date_range(s_date, e_date)
@@ -268,16 +279,10 @@ def clean_folder():
 			continue
 def thread1():
 	#t1 = threading.Thread(target = do_task_by_date, args = ((2005, 1, 1), (2005, 12, 31)))
-	t1 = threading.Thread(target = check_files, args = ((2005, 1, 1), (2005, 12, 31)))
-	t2 = threading.Thread(target = check_files, args = ((2006, 1, 1), (2006, 12, 31)))
-	t3 = threading.Thread(target = check_files, args = ((2007, 1, 1), (2007, 12, 31)))
-	t4 = threading.Thread(target = check_files, args = ((2008, 1, 1), (2008, 12, 31)))
-	t4 = threading.Thread(target = check_files, args = ((2009, 1, 1), (2009, 12, 31)))
-	t5 = threading.Thread(target = check_files, args = ((2010, 1, 1), (2010, 12, 31)))
-	t6 = threading.Thread(target = check_files, args = ((2011, 1, 1), (2011, 12, 31)))
-	t7 = threading.Thread(target = check_files, args = ((2012, 1, 1), (2012, 12, 31)))
-	t8 = threading.Thread(target = check_files, args = ((2013, 1, 1), (2013, 12, 31)))
-	t9 = threading.Thread(target = check_files, args = ((2014, 1, 1), (2014, 12, 31)))
+	t1 = threading.Thread(target = check_files, args = ((2015, 1, 1), (2015, 3, 1)))
+	t2 = threading.Thread(target = check_files, args = ((2015, 3, 1), (2015, 5, 1)))
+	t3 = threading.Thread(target = check_files, args = ((2015, 5, 1), (2015, 7, 1)))
+	t4 = threading.Thread(target = check_files, args = ((2015, 7, 1), (2015, 8, 31)))
 	t1.start()
 	print('Thread-1 started.')
 	t2.start()
@@ -286,16 +291,6 @@ def thread1():
 	print('Thread-3 started.')
 	t4.start()
 	print('Thread-4 started.')
-	t5.start()
-	print('Thread-5 started.')
-	t6.start()
-	print('Thread-6 started.')
-	t7.start()
-	print('Thread-7 started.')
-	t8.start()
-	print('Thread-8 started.')
-	t9.start()
-	print('Thread-9 started.')
 
 def check_files(s_date, e_date):
 	dates = make_date_range(s_date, e_date)
@@ -324,6 +319,4 @@ if __name__ == '__main__':
 	clean_folder()
 	#thread1()
 	#combine_data(r'.\daily\3kb')
-	#do_task_repeatedly()
-	
-	# do_task_repeatedly()
+	do_task_repeatedly()
