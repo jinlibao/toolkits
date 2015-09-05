@@ -14,6 +14,8 @@ function merged_picture = merge_pictures(working_directory)
 % Author: Libao Jin
 % Date: August 26, 2015
 % Copyright (c) 2015 Libao Jin
+% All rights reserved.
+% License: The MIT License (MIT)
 
 
 if nargin == 0
