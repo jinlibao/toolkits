@@ -26,7 +26,7 @@ print(loadings(prin))
 c.data <- cov(std.data)
 e.data <- eigen(c.data)
 values <- e.data$values
-vectors <- e.data$vectores
+vectors <- e.data$vectors
 print("Covariance")
 print(c.data)
 print("Eigen Values")
@@ -48,7 +48,10 @@ for(N in seq(12))
 	{
 		scores <- score
 	}
-	scores <- cbind(scores, score)
+	else
+	{
+		scores <- cbind(scores, score)
+	}
 }
 
 print(scores)
