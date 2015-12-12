@@ -6,7 +6,7 @@ rm(list = ls())
 # import data from .xlsx file
 # install.packages("gdata")
 library("gdata")
-file <- "daisy.xlsx"
+file <- "data/daisy.xlsx"
 data <- read.xls(file)
 std.data <- scale(data)
 # print(std.data)
@@ -55,10 +55,10 @@ for(N in seq(12))
 }
 
 print(scores)
-output_cov <- "covariance.csv"
-output_evalues <- "eigen.values.csv"
-output_evectors <- "eigen.vectors.csv"
-output_scores <- "scores.csv"
+output_cov <- "result/covariance.csv"
+output_evalues <- "result/eigen.values.csv"
+output_evectors <- "result/eigen.vectors.csv"
+output_scores <- "result/scores.csv"
 write.csv(c.data, output_cov)
 write.csv(values, output_evalues)
 write.csv(vectors, output_evectors)

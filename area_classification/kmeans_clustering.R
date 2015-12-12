@@ -8,7 +8,7 @@ rm(list = ls())
 library("gdata")
 library("cluster")
 library("fpc")
-file <- "daisy.xlsx"
+file <- "data/daisy.xlsx"
 data <- read.xls(file)
 std.data <- scale(data, center = TRUE, scale = TRUE)
 # print(std.data)
@@ -20,14 +20,13 @@ k <- kmeans(std.data, 2, iter.max = 10, nstart = 1, algorithm = "MacQueen", trac
 print(k)
 cluster <- k$cluster
 dev.new()
-pdf("kmeans_clustering_1.pdf")
+pdf("result/kmeans_clustering_1.pdf")
 clusplot(std.data, cluster, color = TRUE, shade = TRUE, labels = 2, lines = 0)
 dev.off()
 dev.new()
-pdf("kmeans_clustering_2.pdf")
+pdf("result/kmeans_clustering_2.pdf")
 plotcluster(std.data, cluster)
 dev.off()
 
-output_cluster <- "kmeans_cluster.csv"
+output_cluster <- "result/kmeans_cluster.csv"
 write.csv(cluster, output_cluster)
-
