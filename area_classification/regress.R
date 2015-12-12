@@ -13,8 +13,8 @@ sink("result/result_regression.txt")
 file <- "data/daisy.xlsx"
 data <- read.xls(file)
 print(dim(data))
-std.data <- scale(data[, c(4:10, 12)], center = TRUE, scale = TRUE)
-# std.data <- data[,c(4:10, 12)]
+# std.data <- scale(data[, c(4:10, 12)], center = TRUE, scale = TRUE)
+std.data <- data[,c(4:10, 12)]
 print(std.data)
 
 k <- kmeans(std.data, 2, iter.max = 10, nstart = 1, algorithm = "MacQueen", trace=FALSE)
