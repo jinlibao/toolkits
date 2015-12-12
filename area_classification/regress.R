@@ -13,8 +13,8 @@ sink("result/result_regression.txt")
 file <- "data/daisy.xlsx"
 data <- read.xls(file)
 print(dim(data))
-std.data <- scale(data[, c(4:10)], center = TRUE, scale = TRUE)
-# std.data <- data[,c(4:10, 12)]
+# std.data <- scale(data[, c(4:10)], center = TRUE, scale = TRUE)
+std.data <- data[,c(4:10)]
 print(std.data)
 
 k <- kmeans(std.data, 2, iter.max = 10, nstart = 1, algorithm = "MacQueen", trace=FALSE)
@@ -63,6 +63,7 @@ for (i in seq(50))
 names <- c("Y1", "Y2", "Y3", "X1", "X2", "X3", "X4", "X5", "X6", "X7", "X8", "X9")
 colnames(group1) <- names
 colnames(group2) <- names
+colnames(data) <- names
 print("Group 1")
 print(group1)
 print("Group 2")
@@ -81,4 +82,13 @@ print(summary(lm.2))
 step.2 <- stepAIC(lm.2, direction = "both")
 step.2$anova
 print(summary(step.2))
+sink()
+
+
+lm.3 <- lm(log(Y1, base = exp(1)) ~ X1 + X2 + X3 + X4 + X5 + X6 + X7 + X9, data = data)
+# lm.2 <- lm(Y1 ~ X1 + X2 + X3 + X4 + X5 + X6 + X7 + X9, data = group2)
+print(summary(lm.3))
+step.3 <- stepAIC(lm.3, direction = "both")
+step.3$anova
+print(summary(step.3))
 sink()
