@@ -10,7 +10,7 @@ library("cluster")
 library("fpc")
 file <- "data/daisy.xlsx"
 data <- read.xls(file)
-std.data <- scale(data, center = TRUE, scale = TRUE)
+std.data <- scale(data[,1:11], center = TRUE, scale = TRUE)
 # print(std.data)
 
 d <- dist(std.data, method = "euclidean", diag = TRUE, upper = FALSE)
