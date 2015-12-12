@@ -82,8 +82,6 @@ print(summary(lm.2))
 step.2 <- stepAIC(lm.2, direction = "both")
 step.2$anova
 print(summary(step.2))
-sink()
-
 
 lm.3 <- lm(log(Y1, base = exp(1)) ~ X1 + X2 + X3 + X4 + X5 + X6 + X7 + X9, data = data)
 # lm.2 <- lm(Y1 ~ X1 + X2 + X3 + X4 + X5 + X6 + X7 + X9, data = group2)
