@@ -76,3 +76,5 @@ if __name__ == '__main__':
 	s.compute_ppi(1280, 768, 5)
 	s.compute_ppi(1920, 1080, 4.95)
 	s.compute_ppi(1136, 640, 4)
+	s.compute_ppi(2560, 1600, 13.3)
+	s.compute_ppi(2880, 1800, 15.4)
