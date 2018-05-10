@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Toolkits
 
 This repository contains toolkits written in MATLAB, Python, R, and C in the past few years.
@@ -27,8 +28,20 @@ This repository contains toolkits written in MATLAB, Python, R, and C in the pas
 
 * area_classification: the project to participate in Alibaba big data contest.
 
-## C-projects
+## C
 
 * `count_days.c`: to calculate the day of the year.
 * `sort_chars.c`: to sort characters/letters.
 * `student_scores.c`: to calculate the average scores by courses/students.
+
+# Python
+
+* Computer.Performance: to see the performance of Python on a certain platform by the runtime.
+* Forgetting.Curve: to visualize the forgetting curve.
+* `Get_PDF.py`: to download files (in PDF, PPT, and etc.) from a cerntain website in batch.
+* Numpy: an simple demo for using Numpy.
+* Project.Euler: solutions for little portions of Project Euler.
+* Crawler.Python: basic template for scraping written in Python.
+* X-rates: to scrap the exchange rate of two currencies during a specific period of time and visualize the result.
+* Zjut: to get the login information from the Teachers Data Center of ZJUT and to use brutal force to collect accounts with weak password such as `123456`, `321123`.
+* MySQL-docs: to scrap the documentation from MySQL webiste.

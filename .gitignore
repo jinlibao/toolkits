@@ -48,3 +48,13 @@ vignettes/*.pdf
 
 # Debug files
 *.dSYM/
+
+.gitignore
+*.txt
+*.csv
+*.htm
+*.html
+*.js
+*.xls
+*.xlsx
+*~
