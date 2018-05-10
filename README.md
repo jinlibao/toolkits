@@ -1,7 +1,8 @@
-# MATLAB-files
-Useful MATLAB programs to make life easier and more enjoyable.
+# Toolkits
 
-## functions
+This repository contains toolkits written in MATLAB, Python, R, and C in the past few years.
+
+## MATLAB
 
 * merge_pictures
 	- Aims to merge pictures more conveniently.
@@ -21,5 +22,3 @@ Useful MATLAB programs to make life easier and more enjoyable.
 		+ Syntax: 
 			1. `diylogo_gray(string, depth)`
 			2. `diylogo_rgb(string, depth, RGB)`
-
-(last update: Sept 05, 2015)
