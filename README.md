@@ -26,3 +26,9 @@ This repository contains toolkits written in MATLAB, Python, R, and C in the pas
 ## R
 
 * area_classification: the project to participate in Alibaba big data contest.
+
+## C-projects
+
+* `count_days.c`: to calculate the day of the year.
+* `sort_chars.c`: to sort characters/letters.
+* `student_scores.c`: to calculate the average scores by courses/students.
