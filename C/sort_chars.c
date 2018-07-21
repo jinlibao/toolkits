@@ -6,7 +6,6 @@
  *
  * Copyright (c) 2015 Libao Jin
  * All rights reserved
- * MIT LICENSE
  **********************************************/
 
 #include <stdio.h>
