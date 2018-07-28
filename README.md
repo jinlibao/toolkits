@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Toolkits
 
 This repository contains toolkits written in MATLAB, Python, R, and C in the past few years.
@@ -30,9 +29,12 @@ This repository contains toolkits written in MATLAB, Python, R, and C in the pas
 
 ## C
 
-* `count_days.c`: to calculate the day of the year.
-* `sort_chars.c`: to sort characters/letters.
-* `student_scores.c`: to calculate the average scores by courses/students.
+* [`permute.c`](https://github.com/jinlibao/toolkits/blob/master/C/permute.c): implementation of permutation using recursion.
+* [`merge_sort.c`](https://github.com/jinlibao/toolkits/blob/master/C/merge_sort.c): very concise implementation of merge sort using recursion.
+* [`hash_table.c`](https://github.com/jinlibao/toolkits/blob/master/C/hash_table.c): implementation of hash table based on linked list.
+* [`count_days.c`](https://github.com/jinlibao/toolkits/blob/master/C/count_days.c): to calculate the day of the year.
+* [`sort_chars.c`](https://github.com/jinlibao/toolkits/blob/master/C/sort_chars.c): to sort characters/letters.
+* [`student_scores.c`](https://github.com/jinlibao/toolkits/blob/master/C/stduent_scores.c): to calculate the average scores by courses/students.
 
 # Python
 
