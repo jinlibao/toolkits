@@ -33,14 +33,11 @@ void merge_sort(int *a, int n)
 {
     if (n <= 1)
         return;
-    // Split array into two halves, and sort each half respectively
     int l = n / 2, r = n - l;
     merge_sort(a, l), merge_sort(a + l, r);
-    // Merge two halves
     int *sa = malloc(n * sizeof(int));
     for (int i = 0, j = 0, k = 0; k < n;)
         sa[k++] = (i < l && j < r && a[i] < a[l + j]) || (i < l && j >= r) ? a[i++] : a[l + j++];
-    // Write the sorted array into the original array
     for (int i = 0; i < n; a[i] = sa[i], i++) {}
     free(sa);
 }
