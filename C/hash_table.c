@@ -34,7 +34,7 @@ void insert(node *head, int key, int val)
     if (key == cur->key)
         cur->val += val;
 
-    for (cur = head; key > cur->key; cur = cur->next)
+    for (cur = head; key != cur->key; cur = cur->next)
     {
         if (cur->next && key > cur->next->key)
             continue;
