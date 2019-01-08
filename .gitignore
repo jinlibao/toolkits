@@ -58,3 +58,6 @@ vignettes/*.pdf
 *.xls
 *.xlsx
 *~
+
+# macOS 
+*.DS_Store

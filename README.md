@@ -1,6 +1,6 @@
 # Toolkits
 
-This repository contains toolkits written in MATLAB, Python, R, and C in the past few years.
+Many small toolkits written in MATLAB, Python, R, and C in the past few years.
 
 ## MATLAB
 
@@ -40,7 +40,7 @@ This repository contains toolkits written in MATLAB, Python, R, and C in the pas
 
 * Computer.Performance: to see the performance of Python on a certain platform by the runtime.
 * Forgetting.Curve: to visualize the forgetting curve.
-* `Get_PDF.py`: to download files (in PDF, PPT, and etc.) from a cerntain website in batch.
+* `Get_PDF.py`: to download files (in PDF, PPT, and etc.) from course websites of CMU, Standfor, and etc.
 * Numpy: an simple demo for using Numpy.
 * Project.Euler: solutions for little portions of Project Euler.
 * Crawler.Python: basic template for scraping written in Python.
