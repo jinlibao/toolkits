@@ -1,9 +1,9 @@
 function toh_Ch(N)
 
-%TOH_CH - Towers of Hanoi Chinese Version
+%TOH_CH - Tower of Hanoi Chinese Version
 %
 % This program is going to
-% 1. Solve the Towers of Hanoi problem;
+% 1. Solve the Tower of Hanoi problem;
 % 2. Show the solution (more exactly, the procedures of movements).
 % Try least steps to move disks from Tower A to C with the help of B.
 % Explanation of parameters:
@@ -30,7 +30,7 @@ global na nb nc nn X Y;
 hf = figure('Color',[0.2745 0.7686 0.9882],...
     'Name','ººÅµËþ - Ó¦Êý1101°à ½ðÀí±¦',...
     'Menu','none');
-% Add Title 'Towers of Hanoi' and set the format of it
+% Add Title 'Tower of Hanoi' and set the format of it
 ht1 = uicontrol(hf,'Style','text',...
     'String','ººÅµËþ',...
     'FontName','ºÚÌå',...
