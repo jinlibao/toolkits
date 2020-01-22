@@ -7,8 +7,8 @@ Many small toolkits written in MATLAB, Python, R, and C in the past few years.
 * merge_pictures
     - Aims to merge pictures more conveniently.
     - Syntax: `merged_picture = merge_pictures(working_directory)`
-* Towers.of.Hanoi
-    - Animation of the solutions to Towers of Hanoi.
+* [Tower.of.Hanoi](./MATLAB/Tower.of.Hanoi)
+    - Animation of the solutions to Tower of Hanoi.
     - Syntax: `toh(N)` or `toh_Ch(N)`
 * DIY_Logo: some programs handling with the pictures
     - run.m
@@ -19,7 +19,7 @@ Many small toolkits written in MATLAB, Python, R, and C in the past few years.
         + Syntax: `letter*(N)`, N ranges from 0 to 255
     - diylogo_gray.m and diylogo_rgb.m
         + Combine letters and generate a picture.
-        + Syntax: 
+        + Syntax:
             1. `diylogo_gray(string, depth)`
             2. `diylogo_rgb(string, depth, RGB)`
 
@@ -34,13 +34,13 @@ Many small toolkits written in MATLAB, Python, R, and C in the past few years.
 * [`hash_table.c`](https://github.com/jinlibao/toolkits/blob/master/C/hash_table.c): implementation of hash table based on linked list.
 * [`count_days.c`](https://github.com/jinlibao/toolkits/blob/master/C/count_days.c): to calculate the day of the year.
 * [`sort_chars.c`](https://github.com/jinlibao/toolkits/blob/master/C/sort_chars.c): to sort characters/letters.
-* [`student_scores.c`](https://github.com/jinlibao/toolkits/blob/master/C/stduent_scores.c): to calculate the average scores by courses/students.
+* [`student_scores.c`](https://github.com/jinlibao/toolkits/blob/master/C/student_scores.c): to calculate the average scores by courses/students.
 
 # Python
 
 * Computer.Performance: to see the performance of Python on a certain platform by the runtime.
 * Forgetting.Curve: to visualize the forgetting curve.
-* `Get_PDF.py`: to download files (in PDF, PPT, and etc.) from course websites of CMU, Standfor, and etc.
+* `Get_PDF.py`: to download files (in PDF, PPT, and etc.) from course websites of CMU, Stanford, and etc.
 * Numpy: an simple demo for using Numpy.
 * Project.Euler: solutions for little portions of Project Euler.
 * Crawler.Python: basic template for scraping written in Python.
